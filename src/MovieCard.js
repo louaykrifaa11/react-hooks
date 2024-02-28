@@ -2,11 +2,14 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 import StarRatingComponent from 'react-star-rating-component';
 
 const MovieCard = (props) => {
   return (
-    <div><Card style={{ width: '18rem' }}>
+    <div>
+      <Link to={`/movies/${props.movie.name}`}>
+      <Card style={{ width: '18rem' }}>
     <Card.Img variant="top" src={props.movie.posterURL} />
     <Card.Body>
       <Card.Title>{props.movie.name}</Card.Title>
@@ -21,7 +24,9 @@ const MovieCard = (props) => {
           
           />
     </Card.Body>
-  </Card></div>
+  </Card>
+  </Link>
+  </div>
   )
 }
 
